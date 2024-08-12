@@ -31,9 +31,9 @@ public class Start implements ActionListener {
 
     static String firstName; static String lastName; static String emailName; static String password; static String cardNumber; static String User;
 
-    UserLib m_libraryUsers = new UserLib ( "C:\\Users\\Frank Huawei\\IdeaProjects\\LibProject\\src\\Users.txt" );
+    UserLib m_libraryUsers = new UserLib ( "Users.txt" );
 
-    BookLib m_libraryBooks = new BookLib("C:\\Users\\Frank Huawei\\IdeaProjects\\LibProject\\src\\Books.txt");
+    BookLib m_libraryBooks = new BookLib("Books.txt");
     Start(){
         f=new JFrame("Library Login Page");
 
