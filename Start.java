@@ -283,7 +283,7 @@ public class Start implements ActionListener {
         j.add(email);
         j.add(pass);
 
-        j.setSize(100,100);
+        j.setSize(200,200);
         j.setLayout(null);
         j.setVisible(true);
         i.setVisible(false);
@@ -359,7 +359,7 @@ public class Start implements ActionListener {
         j.add(email);
         j.add(pass);
 
-        j.setSize(100,100);
+        j.setSize(200,200);
         j.setLayout(null);
         j.setVisible(true);
         i.setVisible(false);
