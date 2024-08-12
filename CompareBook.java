@@ -1,4 +1,4 @@
-package LibraryManagementSystem.bookComparators;
+package LibraryManagementSystem;
 
 import LibraryManagementSystem.Book;
 import LibraryManagementSystem.Library;

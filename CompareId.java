@@ -1,4 +1,4 @@
-package LibraryManagementSystem.userComparators;
+package LibraryManagementSystem;
 import LibraryManagementSystem.Library;
 import LibraryManagementSystem.User;
 
