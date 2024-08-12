@@ -225,6 +225,8 @@ public class Start implements ActionListener {
         JPanel search = searchBar();
 
 
+
+
         users = new JPanel();
         users.setLayout(new BoxLayout(users, BoxLayout.Y_AXIS)); // Vertical layout for the labels
         users.setPreferredSize(new Dimension(400, 200));
@@ -256,17 +258,8 @@ public class Start implements ActionListener {
         p.setVisible(true);
         i.setVisible(false);
 
-        p.addWindowListener(new WindowAdapter() {
-            @Override
-            public void windowClosing(WindowEvent e) {
-                p.dispose();
-                f.setVisible(true);
-            }
-        });
-    }
 
-    void librianProfile() {
-        j = new JFrame("Librain Profile");
+        j = new JFrame("Profile");
 
         JTextField d = new JTextField("WELCOME!");
 
@@ -275,10 +268,10 @@ public class Start implements ActionListener {
         email = new JTextArea("Email: " + emailName);
         pass = new JTextArea("Password: " + password);
 
-        first.setBounds(100,60,200, 20);
-        last.setBounds(100,80,200, 20);
-        email.setBounds(100,100,200, 20);
-        pass.setBounds(100,120,200, 20);
+        first.setBounds(0,00,200, 20);
+        last.setBounds(0,20,200, 20);
+        email.setBounds(0,40,200, 20);
+        pass.setBounds(0,60,200, 20);
 
         first.setEditable(false);
         last.setEditable(false);
@@ -290,21 +283,96 @@ public class Start implements ActionListener {
         j.add(email);
         j.add(pass);
 
-        j.setSize(300,400);
+        j.setSize(100,100);
         j.setLayout(null);
         j.setVisible(true);
         i.setVisible(false);
-        j.addWindowListener(new WindowAdapter() {
+        j.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+
+
+        p.addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
-
-                j.dispose();
+                p.dispose();
                 f.setVisible(true);
-
             }
         });
+    }
+
+    void librianProfile() {
+        p = new JFrame("librian Profile");
+        JPanel search = searchBar();
+
+        users = new JPanel();
+        users.setLayout(new BoxLayout(users, BoxLayout.Y_AXIS)); // Vertical layout for the labels
+        users.setPreferredSize(new Dimension(400, 200));
+
+        books = new JPanel();
+        books.setPreferredSize(new Dimension(400, 200));
+
+        // Add user details to left panel
+        for (User u : m_libraryUsers) {
+            JLabel label = new JLabel(u.toString());
+            users.add(label);
+        }
+
+        for (Book i : m_libraryBooks) {
+            JLabel label = new JLabel(i.toString());
+            books.add(label);
+        }
+        JScrollPane scrollPane = new JScrollPane(users);
+        JScrollPane scrollPane2 = new JScrollPane(books);
+
+        // p.setLayout(new BorderLayout());
+
+        p.add(scrollPane, BorderLayout.WEST);
+        p.add(scrollPane2, BorderLayout.EAST);
+        p.add(search, BorderLayout.SOUTH);
 
 
+        p.setSize(1000, 600);
+        p.setVisible(true);
+        i.setVisible(false);
+
+
+        j = new JFrame("Profile");
+
+        JTextField d = new JTextField("WELCOME!");
+
+        first = new JTextArea("First Name: " + firstName);
+        last = new JTextArea("Last Name: " + lastName);
+        email = new JTextArea("Email: " + emailName);
+        pass = new JTextArea("Password: " + password);
+
+        first.setBounds(0,00,200, 20);
+        last.setBounds(0,20,200, 20);
+        email.setBounds(0,40,200, 20);
+        pass.setBounds(0,60,200, 20);
+
+        first.setEditable(false);
+        last.setEditable(false);
+        email.setEditable(false);
+        pass.setEditable(false);
+
+        j.add(first);
+        j.add(last);
+        j.add(email);
+        j.add(pass);
+
+        j.setSize(100,100);
+        j.setLayout(null);
+        j.setVisible(true);
+        i.setVisible(false);
+        j.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+
+
+        p.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                p.dispose();
+                f.setVisible(true);
+            }
+        });
     }
 
     @Override
